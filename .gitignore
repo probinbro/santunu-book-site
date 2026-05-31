@@ -1,0 +1,17 @@
+# Dependencies
+node_modules/
+
+# Production build
+dist/
+
+# Large PDF files
+*.pdf
+temario-completo-de-organizacion-de-la-produccion (1).pdf
+
+# IDEs and local configurations
+.vscode/
+.idea/
+.DS_Store
+*.local
+.env
+.env.*

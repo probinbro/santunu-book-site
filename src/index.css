@@ -1,0 +1,142 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ===== Custom Base Styles ===== */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-surface-950 text-slate-100 min-h-screen;
+    background-image: 
+      radial-gradient(ellipse at 20% 0%, rgba(99, 102, 241, 0.08) 0%, transparent 50%),
+      radial-gradient(ellipse at 80% 100%, rgba(139, 92, 246, 0.06) 0%, transparent 50%);
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-surface-900;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-surface-600 rounded-full;
+    transition: background 0.2s;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-surface-500;
+  }
+}
+
+/* ===== Component Styles ===== */
+@layer components {
+  /* Glassmorphism card */
+  .glass-card {
+    @apply bg-surface-900/60 backdrop-blur-xl border border-white/[0.06] rounded-2xl shadow-xl;
+  }
+
+  .glass-card-hover {
+    @apply glass-card transition-all duration-300;
+  }
+
+  .glass-card-hover:hover {
+    @apply bg-surface-800/70 border-white/[0.1] shadow-2xl;
+    transform: translateY(-2px);
+  }
+
+  /* Gradient text */
+  .gradient-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 via-violet-400 to-purple-400;
+  }
+
+  .gradient-text-warm {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-amber-400 via-orange-400 to-rose-400;
+  }
+
+  .gradient-text-cool {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 via-blue-400 to-indigo-400;
+  }
+
+  /* Accent borders */
+  .border-glow-indigo {
+    @apply border border-indigo-500/30;
+    box-shadow: 0 0 15px -3px rgba(99, 102, 241, 0.15), inset 0 0 15px -3px rgba(99, 102, 241, 0.05);
+  }
+
+  .border-glow-emerald {
+    @apply border border-emerald-500/30;
+    box-shadow: 0 0 15px -3px rgba(16, 185, 129, 0.15), inset 0 0 15px -3px rgba(16, 185, 129, 0.05);
+  }
+
+  .border-glow-amber {
+    @apply border border-amber-500/30;
+    box-shadow: 0 0 15px -3px rgba(245, 158, 11, 0.15), inset 0 0 15px -3px rgba(245, 158, 11, 0.05);
+  }
+
+  .border-glow-rose {
+    @apply border border-rose-500/30;
+    box-shadow: 0 0 15px -3px rgba(244, 63, 94, 0.15), inset 0 0 15px -3px rgba(244, 63, 94, 0.05);
+  }
+
+  /* Animated gradient background for hero sections */
+  .hero-gradient {
+    background: linear-gradient(
+      135deg,
+      rgba(99, 102, 241, 0.12) 0%,
+      rgba(139, 92, 246, 0.08) 25%,
+      rgba(168, 85, 247, 0.06) 50%,
+      rgba(99, 102, 241, 0.1) 75%,
+      rgba(79, 70, 229, 0.12) 100%
+    );
+    background-size: 200% 200%;
+    animation: gradientX 8s ease infinite;
+  }
+
+  /* Formula styling */
+  .formula {
+    @apply font-mono text-lg px-6 py-4 rounded-xl bg-surface-800/80 border border-indigo-500/20 text-indigo-200;
+    letter-spacing: 0.02em;
+  }
+
+  /* Sidebar active indicator */
+  .sidebar-active {
+    @apply bg-indigo-500/10 text-indigo-300 border-l-2 border-indigo-400;
+  }
+
+  /* Section divider */
+  .section-divider {
+    @apply border-t border-white/[0.06] my-12;
+  }
+}
+
+/* ===== Animation Utilities ===== */
+@layer utilities {
+  .animation-delay-100 {
+    animation-delay: 100ms;
+  }
+
+  .animation-delay-200 {
+    animation-delay: 200ms;
+  }
+
+  .animation-delay-300 {
+    animation-delay: 300ms;
+  }
+
+  .animation-delay-400 {
+    animation-delay: 400ms;
+  }
+
+  .animation-delay-500 {
+    animation-delay: 500ms;
+  }
+}
